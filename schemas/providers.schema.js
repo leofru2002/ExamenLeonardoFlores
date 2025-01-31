@@ -6,22 +6,22 @@ const ruc = Joi.string().length(10);
 const direccion = Joi.string().min(5).max(100);
 const estado = Joi.boolean();
 
-const createSupplierSchema = Joi.object({
+const createProviderSchema = Joi.object({
   name: name.required(),
   ruc: ruc.required(),
   direccion: direccion.required(),
   estado: estado.required(),
 });
 
-const updateSupplierSchema = Joi.object({
+const updateProviderSchema = Joi.object({
   name,
   ruc,
   direccion,
   estado,
 });
 
-const getSupplierSchema = Joi.object({
+const getProviderSchema = Joi.object({
   id: id.required(),
 });
 
-module.exports = { createSupplierSchema, updateSupplierSchema, getSupplierSchema };
+module.exports = { createProviderSchema, updateProviderSchema, getProviderSchema };

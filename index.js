@@ -3,7 +3,7 @@ const routerApi = require('./routes'); // Importar las rutas
 const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler');
 const app = express(); // Asignar express a mi aplicación
 const port = 3001; // Asignación puerto donde se ejecutará el proy
-const suppliersRouter = require('./routes/suppliers.router');
+const providersRouter = require('./routes/providers.router');
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -13,7 +13,7 @@ app.get('/nueva-ruta', (req, res) => {
   res.send('Hola, soy una nueva ruta');
 });
 
-app.use('/api/suppliers', suppliersRouter);
+app.use('/api/providers', providersRouter);
 
 
 routerApi(app);
